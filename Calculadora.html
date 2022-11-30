@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+
+<body>
+
+    <script>
+
+        class calculadora {
+
+        constructor(x1,x2){
+        this.x1 = x1;
+        this.x2 = x2;
+        this.resultado = null;
+    }
+
+        sumar(){
+            this.resultado = this.x1 + this.x2;
+            document.write(`La suma de ${this.x1} y ${this.x2} es `);
+            this.imprimir();
+        }
+
+        restar(){
+            this.resultado = this.x1 - this.x2;
+            document.write(`La resta de ${this.x1} y ${this.x2} es `);
+            this.imprimir();
+        }
+
+        Multiplicar(){
+            this.resultado = this.x1 * this.x2;
+            document.write(`La Multiplicación de ${this.x1} y ${this.x2} es `);
+            this.imprimir();
+        }
+
+        divicion(){
+            this.resultado = this.x1 / this.x2;
+            document.write(`La divicion de ${this.x1} y ${this.x2} es `);
+            this.imprimir();
+        }
+
+        imprimir(){
+            document.write(this.resultado + '<br>');
+        }
+       
+    }
+
+        class Calculadoracientifica extends calculadora {
+            cuadrado() {
+                this.resultado = this.x1 * this.x1;
+                document.write(` ${this.x1} elevado al cuadrado es `);
+                this.imprimir();
+            }
+
+            raizcuadrada(){
+                this.resultado = Math.sqrt(this.x1);
+                document.write(` La raiz cuadrada de ${this.x1} es `);
+                this.imprimir();
+            }
+        }
+
+        const calculadora1 = new calculadora(100,20);
+        calculadora1.sumar();
+        calculadora1.restar();
+        calculadora1.Multiplicar();
+        calculadora1.divicion();
+        
+        const Calculadoracientifica1 = new Calculadoracientifica(0,2);
+        Calculadoracientifica1.sumar();
+        Calculadoracientifica1.restar();
+        Calculadoracientifica1.cuadrado();
+        Calculadoracientifica1.raizcuadrada();
+    </script>
+
+</body>
+
+</html>
